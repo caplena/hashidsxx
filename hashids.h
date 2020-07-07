@@ -69,6 +69,14 @@ public:
   }
 #endif
 
+  std::string encode_list(const std::vector<int> &input) const {
+    return encode(input.begin(), input.end());
+  }
+
+  std::string encode_int(int input) const {
+    return encode({ input });
+  }
+
   template <typename Iterator>
   std::string encode(const Iterator begin, const Iterator end) const {
     // Encrypting nothing makes no sense
